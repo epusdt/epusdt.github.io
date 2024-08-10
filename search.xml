@@ -4,13 +4,180 @@
   
     
     <entry>
-      <title>Hello World</title>
-      <link href="/2024/08/10/hello-world/"/>
-      <url>/2024/08/10/hello-world/</url>
+      <title>宝塔搭建Epusdt详细教程，搭建USDT支付收款教程，详细的USDT支付搭建教程，Epusdt详细的搭建教程（图文）</title>
+      <link href="/2024/08/10/epusdt/"/>
+      <url>/2024/08/10/epusdt/</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[<p><strong>宝塔搭建Epusdt详细教程，搭建USDT支付收款教程，详细的USDT支付搭建教程，Epusdt详细的搭建教程，图文教程，网站USDT支付功能教程，搭建网站USDT收款功能</strong></p><h2 id="一、添加站点"><a href="#一、添加站点" class="headerlink" title="一、添加站点"></a>一、添加站点</h2><ul><li>自己解析一个域名出来，用于 <code>epusdt</code> 收款系统</li><li>宝塔添加站点，申请证书，打开强制 <code>https </code>，防跨站记得关闭！<br> <img src="https://tc.izhan.cc/i/2024/08/10/duxll8.png" alt="Test"><br> <img src="https://tc.izhan.cc/i/2024/08/10/duxbqc.png" alt="Test"><br> <img src="https://tc.izhan.cc/i/2024/08/10/duoixj.png" alt="Test"></li></ul><h2 id="二、上传源码改名-env"><a href="#二、上传源码改名-env" class="headerlink" title="二、上传源码改名.env"></a>二、上传源码改名.env</h2><ul><li>双击文件，更改文件名成： <code>.env </code><br> <img src="https://tc.izhan.cc/i/2024/08/10/dx1bau.png" alt="Test"><br> <img src="https://tc.izhan.cc/i/2024/08/10/dxzh3m.png" alt="Test"><br> <img src="https://tc.izhan.cc/i/2024/08/10/dxzjn6.png" alt="Test"></li></ul><h2 id="三、配置-env文件"><a href="#三、配置-env文件" class="headerlink" title="三、配置.env文件"></a>三、配置.env文件</h2><ul><li>如图按照要求配置 <code>.env </code>文件，端口跟 <code>接口token </code>可自定义，订单有效时间和汇率也可以自定义按自身需求配置。<br><strong>域名开头一定要以 https:&#x2F;&#x2F; 开头</strong> 例如我的 <code>https://epusdt.txtx123.top </code><br> <img src="https://tc.izhan.cc/i/2024/08/10/dz40p8.png" alt="Test"><br> <img src="https://tc.izhan.cc/i/2024/08/10/dz47pp.png" alt="Test"><br><strong>申请机器人在飞机上 @botfather 官方申请成功会给你机器人秘钥</strong><br><strong>查询自己飞机号唯一的ID号，每个飞机号都有唯一的ID，不是用户名！！！</strong><br> <img src="https://tc.izhan.cc/i/2024/08/10/dztwue.png" alt="Test"></li></ul><h2 id="四、给-env权限755"><a href="#四、给-env权限755" class="headerlink" title="四、给.env权限755"></a>四、给.env权限755</h2><ul><li>宝塔直接给权限或者终端 <code>cd到自己epusdt根目录 </code>，执行命令<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">cd www/wwwroot/epusdt.txtx123.top  <span class="comment">#cd到根目录</span></span><br><span class="line">chmod +x epusdt  <span class="comment">#给权限命令</span></span><br></pre></td></tr></table></figure><strong>小白的话建议直接在宝塔给权限就行</strong><br> <img src="https://tc.izhan.cc/i/2024/08/10/e55sqr.png" alt="Test"></li></ul><h2 id="五、放行端口"><a href="#五、放行端口" class="headerlink" title="五、放行端口"></a>五、放行端口</h2><ul><li>EPUSDT默认的端口号是 <code>8000 </code>，如果上一步你自定义端口号就放行自己自定义的端口号<br> <img src="https://tc.izhan.cc/i/2024/08/10/e3dlk2.png" alt="Test"></li></ul><h2 id="六、导入epusdt数据库"><a href="#六、导入epusdt数据库" class="headerlink" title="六、导入epusdt数据库"></a>六、导入epusdt数据库</h2><ul><li>宝塔：数据库管理，输入自己设置的数据库账号和密码登录</li><li>登录后左侧点一下自己数据库，再点导入<br> <img src="https://tc.izhan.cc/i/2024/08/10/e7hkct.png" alt="Test"><br> <img src="https://tc.izhan.cc/i/2024/08/10/e7htmh.png" alt="Test"><br> <img src="https://tc.izhan.cc/i/2024/08/10/e7hsxf.png" alt="Test"></li></ul><h2 id="七、配置并运行进程守护"><a href="#七、配置并运行进程守护" class="headerlink" title="七、配置并运行进程守护"></a>七、配置并运行进程守护</h2><ul><li>宝塔应用管理，安装好：进程守护管理</li><li>然后按下图配置<br> <img src="https://tc.izhan.cc/i/2024/08/10/exwb8a.png" alt="Test"><br> <img src="https://tc.izhan.cc/i/2024/08/10/e6hezl.png" alt="Test"><br> <img src="https://tc.izhan.cc/i/2024/08/10/e6hgys.png" alt="Test"></li></ul><h2 id="八、成功查看"><a href="#八、成功查看" class="headerlink" title="八、成功查看"></a>八、成功查看</h2><ul><li>回到飞机上给自己的 <code>epusdt </code>发送  <code>/start </code> 机器人回复让你添加钱包地址即为成功</li><li>打开我们的 <code>epusdt </code>网址，显示 <code>hello epusdt </code>字样即为成功<br> <img src="https://tc.izhan.cc/i/2024/08/10/exmqxy.png" alt="Test"><br> <img src="https://tc.izhan.cc/i/2024/08/10/exn1eq.png" alt="Test"></li></ul>]]></content>
       
       
+      <categories>
+          
+          <category> 网站搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 网站搭建 </tag>
+            
+            <tag> USDT支付 </tag>
+            
+            <tag> 交流分享 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>halo博客快速部署,应该算是最详细的宝塔搭建教程,小白一眼就会的详细教程（图文）</title>
+      <link href="/2024/08/07/halo/"/>
+      <url>/2024/08/07/halo/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul><li><code>Halo</code>博客系统的宝塔部署教程</li><li>这个系统也是热门，人气比<code>Typecho</code>还高，不过我已经有了爱不释手的<code>Hexo</code>哈哈哈</li><li>全程详细的宝塔图文教程（包括绑定域名）</li><li>前两天搜了一下谷歌，发现宝塔部署<code>Halo</code>的只看到几篇文章教程，零零散散的也没配详细图文</li><li>有的纯小白如果漏了一步截图可能就蒙了，所以我来个全程图文~</li></ul><h2 id="一、宝塔拉取镜像并运行"><a href="#一、宝塔拉取镜像并运行" class="headerlink" title="一、宝塔拉取镜像并运行"></a>一、宝塔拉取镜像并运行</h2><ol><li><p>宝塔这个自己装好没问题吧，登录后在左边栏<code>docker</code>容器，点击安装<br><img src="https://tc.izhan.cc/i/2024/08/07/twptvo.png" alt="Test"></p></li><li><p>安装好docker我们通过搜索halo 选最多那个 拉取Halo镜像<br><img src="https://tc.izhan.cc/i/2024/08/07/twqa9y.png" alt="Test"></p></li><li><p>宝塔终端执行<code>halo安装命令</code>（创建容器）<code>2024.8.7Halo最新版本号为2.18</code></p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -it -d --name halo -p 8090:8090 -v ~/.halo2:/root/.halo2 registry.fit2cloud.com/halo/halo:2.18</span><br></pre></td></tr></table></figure><p><img src="https://tc.izhan.cc/i/2024/08/07/twpv5t.png" alt="Test"></p></li></ol><h2 id="二、放行Halo端口"><a href="#二、放行Halo端口" class="headerlink" title="二、放行Halo端口"></a>二、放行Halo端口</h2><ol start="4"><li><code>Halo</code>默认的端口号是<code>8090</code>宝塔设置放行</li><li>需要注意的是：部分服务器商家可能还需要到服务器平台防火墙放行<br><img src="https://tc.izhan.cc/i/2024/08/07/twq6o3.png" alt="Test"></li></ol><h2 id="三、IP-端口号访问"><a href="#三、IP-端口号访问" class="headerlink" title="三、IP:端口号访问"></a>三、IP:端口号访问</h2><ol start="6"><li>因为还没绑定域名，所以我们运行成功后可以通过服务器<code>ip:8090</code>访问，例如ip是<code>1.1.1.1</code>，那么就是<code>1.1.1.1:8090</code>访问<br><img src="https://tc.izhan.cc/i/2024/08/07/twq6yo.png" alt="Test"></li></ol><h2 id="四、后台选择主题"><a href="#四、后台选择主题" class="headerlink" title="四、后台选择主题"></a>四、后台选择主题</h2><ol start="7"><li><p>登录后台后可在<code>Halo</code>官方应用中心选择一款喜欢的主题直接安装。<br><img src="https://tc.izhan.cc/i/2024/08/07/twqe3t.png" alt="Test"></p></li><li><p>测试主题首页效果<br><img src="https://tc.izhan.cc/i/2024/08/07/twqmoe.png" alt="Test"></p></li></ol><h2 id="五、绑定域名设置反代"><a href="#五、绑定域名设置反代" class="headerlink" title="五、绑定域名设置反代"></a>五、绑定域名设置反代</h2><ol start="9"><li><p>回到宝塔，添加一个站点，绑定自己的域名，不需要设置数据库和PHP<br><img src="https://tc.izhan.cc/i/2024/08/07/twqi0u.png" alt="Test"></p></li><li><p>然后记得<code>把防跨站关了</code>，还有给自己<code>配个证书</code>。<code>强制HTTPS打开</code>，<code>这三个步骤</code>最最最基本的不需要多说了吧？！</p></li><li><p>点站点域名设置，点开反向代理设置，<code>Halo</code>默认端口是<code>8090</code>，那么应设置为：<code>http://127.0.0.1:8090</code> 其他不用管，点保存即可<br><img src="https://tc.izhan.cc/i/2024/08/07/twptyy.png" alt="Test"></p></li><li><p>设置好反代后直接浏览器访问自己绑定的域名，ojbk成功搭建<code>halo</code>并绑定域名，你是最靓的仔了<br><img src="https://tc.izhan.cc/i/2024/08/07/twquj7.png" alt="Test"><br><img src="https://tc.izhan.cc/i/2024/08/07/twqk9s.png" alt="Test"><br><img src="https://tc.izhan.cc/i/2024/08/07/twqr7e.png" alt="Test"></p></li></ol><h2 id="完结"><a href="#完结" class="headerlink" title="完结"></a>完结</h2><ul><li>本次教程用的主题叫<code>joe</code>宝塔面板为官方<code>海外版</code>（国际版）</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网站搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 宝塔面板 </tag>
+            
+            <tag> 国际版宝塔 </tag>
+            
+            <tag> 分享交流 </tag>
+            
+            <tag> 网站搭建 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>独角数卡,独角发卡搭建安装教程,比较完整的教程,宝塔户百分百看懂</title>
+      <link href="/2024/08/06/dujiaoka/"/>
+      <url>/2024/08/06/dujiaoka/</url>
+      
+        <content type="html"><![CDATA[<h2 id="独角数卡，独角发卡系统"><a href="#独角数卡，独角发卡系统" class="headerlink" title="独角数卡，独角发卡系统"></a>独角数卡，独角发卡系统</h2><ul><li>作者项目地址：<a href="https://github.com/assimon/dujiaoka">https://github.com/assimon/dujiaoka</a></li><li>项目已开源，在Github上可下载源码</li><li>感谢作者的开源项目</li></ul><h2 id="一、首先安装搭建环境"><a href="#一、首先安装搭建环境" class="headerlink" title="一、首先安装搭建环境"></a>一、首先安装搭建环境</h2><ul><li>独角所需安装的有六个应用</li><li>登录宝塔后-应用管理-依次搜索这六个应用名字安装<br><img src="https://tc.izhan.cc/i/2024/08/06/w62fdt.png" alt="Test"></li></ul><h2 id="二、添加一个站点"><a href="#二、添加一个站点" class="headerlink" title="二、添加一个站点"></a>二、添加一个站点</h2><ul><li>一般都是主域名跟一个www开头的二级域名</li><li>独角需要数据库，自行设置一个，然后选择PHP版本，这里我用PHP7.4<br><img src="https://tc.izhan.cc/i/2024/08/06/w62dkl.png" alt="Test"></li></ul><h2 id="三、配置证书开HTTPS"><a href="#三、配置证书开HTTPS" class="headerlink" title="三、配置证书开HTTPS"></a>三、配置证书开HTTPS</h2><ul><li>宝塔里面免费申请证书，然后打开强制<code>HTTPS</code></li><li>前提一定要解析绑定好服务器，在自己的域名平台解析好生效才能申请。<br><img src="https://tc.izhan.cc/i/2024/08/06/w62jm0.png" alt="Test"><br><img src="https://tc.izhan.cc/i/2024/08/06/w62p5l.png" alt="Test"></li></ul><h2 id="四、删除默认文件，上传源码"><a href="#四、删除默认文件，上传源码" class="headerlink" title="四、删除默认文件，上传源码"></a>四、删除默认文件，上传源码</h2><ul><li>进入刚刚添加好的站点根目录，删掉这些个默认的文件</li><li>上传独角数卡的源码，然后解析，我看了一下，解压出来如果只看到<code>dujiaoka</code>文件夹，你可以选择点进去把里面的全部文件剪切粘贴出来到根目录，也可以在站点设置运行目录里设置。小白的话建议是剪切粘贴出来。确保独角全部文件在你站点根目录。<br><img src="https://tc.izhan.cc/i/2024/08/06/w62u76.png" alt="Test"></li></ul><h2 id="五、配置-env文件"><a href="#五、配置-env文件" class="headerlink" title="五、配置 .env文件"></a>五、配置 .env文件</h2><ul><li>上传好独角源码后，下拉找到<code>.env</code>文件，双击打开编辑</li><li>域名改成自己的，注意：https:&#x2F;&#x2F; 开头，添加站点域名的时候如果是主域名跟www域名 必须填主域名，不要填www<br><img src="https://tc.izhan.cc/i/2024/08/06/w631nj.png" alt="Test"></li><li>修改完点击左上角的 Save 保存生效</li></ul><h2 id="六、设置运行目录和伪静态"><a href="#六、设置运行目录和伪静态" class="headerlink" title="六、设置运行目录和伪静态"></a>六、设置运行目录和伪静态</h2><ul><li>返回到站点管理，点击域名跳出来设置，看下图设置运行目录，还需要关闭防跨站<br><img src="https://tc.izhan.cc/i/2024/08/06/w62yx6.png" alt="Test"></li><li>设置伪静态 这个是独角需要的伪静态<br><img src="https://tc.izhan.cc/i/2024/08/06/w636sv.png" alt="Test"></li></ul><h2 id="七、安装拓展，禁用函数"><a href="#七、安装拓展，禁用函数" class="headerlink" title="七、安装拓展，禁用函数"></a>七、安装拓展，禁用函数</h2><ul><li><p>宝塔应用管理，点击PHP应用弹出设置，并安装下图安装这三个拓展<br><img src="https://tc.izhan.cc/i/2024/08/06/w636qb.png" alt="Test"></p></li><li><p>继续在PHP7.4设置里面 删除独角要求的禁用函数 </p></li><li><p><code>putenv</code>，<code>proc_open</code>，<code>pcntl_signal</code>，<code>pcntl_alarm</code><br><img src="https://tc.izhan.cc/i/2024/08/06/w63h2a.png" alt="Test"></p></li><li><p>拓展跟禁用函数都弄好了建议重启一下PHP<br><img src="https://tc.izhan.cc/i/2024/08/06/w63ivp.png" alt="Test"></p></li></ul><h2 id="八、访问域名安装"><a href="#八、访问域名安装" class="headerlink" title="八、访问域名安装"></a>八、访问域名安装</h2><ul><li><p>完成以上全部步骤即可直接访问域名进行安装</p></li><li><p>需要填：数据库信息，域名信息。其他默认就行<br><img src="https://tc.izhan.cc/i/2024/08/06/w63foj.png" alt="Test"></p></li><li><p>安装成功后注意注意注意，第一时间去.env 文件更改后台默认路径，把<code>/admin</code>改成自己想要的，私密地址。比如我的 &#x2F;zdfk<br><img src="https://tc.izhan.cc/i/2024/08/06/w63mwf.png" alt="Test"></p></li><li><p>如果没有安装成功，同时报错，基本都是你没有设置好某一步，重新再从头看着操作一遍，确认无误即可安装成功</p></li><li><p>注意注意注意，第一时间去<code>.env</code>文件更改后台默认路径，把<code>/admin</code>改成自己想要的，私密地址。</p></li><li><p>注意注意注意，第一时间去<code>.env</code>文件更改后台默认路径，把<code>/admin</code>改成自己想要的，私密地址。<br><strong>重要的事说三遍</strong></p></li><li><p>独角数卡比较热门，用户数量也多，难免有些不怀好意的人钻空子，因为都知道独角刚搭建好默认的都是<code>admin</code>，就利用爬虫自动爬取你网站进行登录修改支付信息等，别质疑，这是真的。所以安装好不要着急运营使用，第一时间去更改后台路径然后登录后台更改账号密码。</p></li></ul><h2 id="九、修改默认后台路径"><a href="#九、修改默认后台路径" class="headerlink" title="九、修改默认后台路径"></a>九、修改默认后台路径</h2><ul><li>回到站点根目录，打开<code>.env</code>文件，下滑找到<code>/admin</code>这里改成只有自己知道的地址 比如我的<code>/zdfk</code></li><li>然后把最底部那条<code>false</code>改成<code>true</code></li><li>正式上线运营后还需要要将<code>.env</code>配置里面的<code>APP_DEBUG</code>设置为<code>false</code>在顶部<br><img src="https://tc.izhan.cc/i/2024/08/06/w63ow5.png" alt="Test"></li><li>记得点左上角 Save 保存</li></ul><h2 id="十、登录后台修改账号密码"><a href="#十、登录后台修改账号密码" class="headerlink" title="十、登录后台修改账号密码"></a>十、登录后台修改账号密码</h2><ul><li>改好后台路径后 就可以登录后台更改后台账号密码了<br><img src="https://tc.izhan.cc/i/2024/08/06/w63xm5.png" alt="Test"></li></ul><h2 id="十一、最后一步配置守护进程"><a href="#十一、最后一步配置守护进程" class="headerlink" title="十一、最后一步配置守护进程"></a>十一、最后一步配置守护进程</h2><ul><li>到宝塔应用管理，打开进程守护管理，国际版叫<code>Supervisor</code></li><li>运行目录是你站点根目录，例如我的<code>/www/wwwroot/qqdian.vip</code>选择到这即可</li><li>启动命令 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/www/server/php/74/bin/php /www/wwwroot/qqdian.vip/artisan queue:work</span><br><span class="line"></span><br><span class="line">运行命令是:/www/server/php/74/bin/php空格+运行目录/artisan queue:work</span><br><span class="line"></span><br><span class="line">注意空格！！！</span><br></pre></td></tr></table></figure></li><li>我选的PHP是7.4版本，如果你是7.3就把74改成73即可<br><img src="https://tc.izhan.cc/i/2024/08/06/y1009p.png" alt="Test"></li></ul><p><strong>填完图上信息，点启动，成功运行起来是绿色 Running 如果显示红色提示错误，具体原因看运行日志，基本还是那句话，上面的步骤你有漏的或者自作聪明更改了些地方又不懂还瞎改。</strong><br><img src="https://tc.izhan.cc/i/2024/08/06/ys740g.png" alt="Test"></p><h2 id="完结"><a href="#完结" class="headerlink" title="完结"></a>完结</h2><ul><li>特别需要千叮咛万嘱咐的就是，后台路径记得改，默认的账号密码也改一改。源码本无措，万事首先自身找原因解决。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网站搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 宝塔面板 </tag>
+            
+            <tag> 国际版宝塔 </tag>
+            
+            <tag> 分享交流 </tag>
+            
+            <tag> 网站搭建 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>(已实测)Cloudflare免费网站防护，普遍规则设置，CF防CC攻击规则，waf规则，cloudflare网站防攻击</title>
+      <link href="/2024/08/06/cloudflare/"/>
+      <url>/2024/08/06/cloudflare/</url>
+      
+        <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>网站趋于稳定，又迎来nginx调优，先和大家分享我CF的 WAF规则，因为这个是最有效的防御，能抵御大量脚本小子的恶意攻击流量，已经被我验证数月。</p><p>在海外做独立站电商网站首选CF的CDN服务，因为太强大了，没有之一。中小型需求不多直接免费到爽。接入后网站加速防护全全交给CF了。最稳的选择。</p><p><strong>8.8已小测过了，全打在缓存上98%以上，还是非常有效的。</strong><br> <img src="https://tc.izhan.cc/i/2024/08/08/pb7l7s.jpeg"></p><h2 id="进入-WAF配置页"><a href="#进入-WAF配置页" class="headerlink" title="进入 WAF配置页"></a>进入 WAF配置页</h2><ul><li><p>进入CF的后台，选择你要防御的站点域名。</p></li><li><p><a href="https://dash.cloudflare.com/login/">https://dash.cloudflare.com/login/</a></p></li><li><p>记得在DNS选项，开启小云朵。这就开启CDN了，后续防御规则才会生效。<br> <img src="https://tc.izhan.cc/i/2024/07/08/gqm1dk.jpeg" alt="Test"></p></li><li><p>选择安全性 WAF<br> <img src="https://tc.izhan.cc/i/2024/07/08/gqtgpk.jpeg" alt="Test"></p></li><li><p>四个WAF规则，一般大家就三个规则。放行自己，放行SEO爬虫，质询刻意流量。</p></li><li><p>添加规则<br> <img src="https://tc.izhan.cc/i/2024/07/08/grr6tm.jpeg" alt="Test"></p></li><li><p>选择正则表达式添加规则，复制规则保存即可。</p></li></ul><h2 id="放行爬虫seo和自己"><a href="#放行爬虫seo和自己" class="headerlink" title="放行爬虫seo和自己"></a>放行爬虫seo和自己</h2><ul><li><p>以下列出三个规则的正则表达式</p></li><li><p>第一个放行自己原站IP，跟相连有关的ip放行</p></li><li><p>IPV4和IPV6地址改成自己</p><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">(ip.src eq <span class="number">192.168</span><span class="number">.7</span><span class="number">.17</span>) or (ip.src eq <span class="number">2901</span>:c080:<span class="number">1110</span>:<span class="number">4</span>c91:<span class="number">5400</span>:<span class="number">4f</span>f:feb8:<span class="number">130</span>a)...</span><br></pre></td></tr></table></figure></li><li><p>选择操作跳过按图设置，随后保存规则<br> <img src="https://tc.izhan.cc/i/2024/07/08/gug2uy.jpeg" alt="Test"></p></li><li><p>第二个放行SEO爬虫</p></li><li><p>无脑复制即可，无需修改，</p><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">(cf.client.bot) or (http.user_agent contains <span class="string">&quot;duckduckgo&quot;</span>) or (http.user_agent contains <span class="string">&quot;facebookexternalhit&quot;</span>) or (http.user_agent contains <span class="string">&quot;Feedfetcher-Google&quot;</span>) or (http.user_agent contains <span class="string">&quot;LinkedInBot&quot;</span>) or (http.user_agent contains <span class="string">&quot;Mediapartners-Google&quot;</span>) or (http.user_agent contains <span class="string">&quot;msnbot&quot;</span>) or (http.user_agent contains <span class="string">&quot;Slackbot&quot;</span>) or (http.user_agent contains <span class="string">&quot;TwitterBot&quot;</span>) or (http.user_agent contains <span class="string">&quot;ia_archive&quot;</span>) or (http.user_agent contains <span class="string">&quot;yahoo&quot;</span>)...</span><br></pre></td></tr></table></figure></li><li><p>操作也选择跳过，随后保存</p></li></ul><h2 id="质询恶意流量规则"><a href="#质询恶意流量规则" class="headerlink" title="质询恶意流量规则"></a>质询恶意流量规则</h2><ul><li><p>至关重要。但也很简单。地域限制，HTTP版本限制都十分管用。在之前大佬的基础上进化规则。</p><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">(cf.threat_score ge <span class="number">5</span> and not cf.client.bot) or (not http.request.version in &#123;<span class="string">&quot;HTTP/2&quot;</span> <span class="string">&quot;HTTP/3&quot;</span>&#125;) or (not ip.geoip.country in &#123;<span class="string">&quot;AU&quot;</span> <span class="string">&quot;CA&quot;</span> <span class="string">&quot;FR&quot;</span> <span class="string">&quot;DE&quot;</span> <span class="string">&quot;HK&quot;</span> <span class="string">&quot;IR&quot;</span> <span class="string">&quot;JP&quot;</span> <span class="string">&quot;KR&quot;</span> <span class="string">&quot;MY&quot;</span> <span class="string">&quot;SG&quot;</span> <span class="string">&quot;TW&quot;</span> <span class="string">&quot;GB&quot;</span> <span class="string">&quot;US&quot;</span> <span class="string">&quot;CN&quot;</span>&#125;)...</span><br></pre></td></tr></table></figure></li><li><p>这些大写字母是国家或地区的简称，在其中的都是放行的国家。如果你只在香港做业务可以只填写HK，其余的全部会进入质询拦截模式，俗称CF的5秒盾。<br> <img src="https://tc.izhan.cc/i/2024/07/08/gy9zwy.jpeg" alt="Test"></p></li><li><p>后续观察</p></li><li><p>这一波设置基本就ok了。可以放几天试试，观察放行和拦截情况。</p></li></ul><h2 id="频率限制"><a href="#频率限制" class="headerlink" title="频率限制"></a>频率限制</h2><ul><li>对了还有频率限制，也很关键。<br> <img src="https://tc.izhan.cc/i/2024/07/08/gziu7h.jpeg" alt="Test"><br> <img src="https://tc.izhan.cc/i/2024/07/08/gzj423.jpeg" alt="Test"><br> <img src="https://tc.izhan.cc/i/2024/07/08/gzj62f.jpeg" alt="Test"></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 分享交流 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 分享交流 </tag>
+            
+            <tag> Cloudflare </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>宝塔面板国际版aaPanel安装保姆级教程,国际版宝塔安装,国际版宝塔一键安装命令</title>
+      <link href="/2024/08/06/bthwb/"/>
+      <url>/2024/08/06/bthwb/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><ul><li>SSH连接上服务器，确定操作系统的环境是纯净的，没有配置过其他环境。</li><li>推荐工具：<code>Xshell</code> 和 <code>FinalShell</code></li></ul><h2 id="Centos系统命令"><a href="#Centos系统命令" class="headerlink" title="Centos系统命令"></a>Centos系统命令</h2><figure class="highlight php"><table><tr><td class="code"><pre><span class="line">yum install -y wget &amp;&amp; wget -O install.sh http:<span class="comment">//www.aapanel.com/script/install_6.0_en.sh &amp;&amp; bash install.sh aapanel</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#至centos停止维护后，需要先更换源才能使用此命令</span></span><br></pre></td></tr></table></figure><h2 id="Ubuntu系统命令"><a href="#Ubuntu系统命令" class="headerlink" title="Ubuntu系统命令"></a>Ubuntu系统命令</h2><figure class="highlight php"><table><tr><td class="code"><pre><span class="line">wget -O install.sh http:<span class="comment">//www.aapanel.com/script/install-ubuntu_6.0_en.sh &amp;&amp; sudo bash install.sh aapanel</span></span><br></pre></td></tr></table></figure><h2 id="Debian系统命令"><a href="#Debian系统命令" class="headerlink" title="Debian系统命令"></a>Debian系统命令</h2><figure class="highlight php"><table><tr><td class="code"><pre><span class="line">wget -O install.sh http:<span class="comment">//www.aapanel.com/script/install-ubuntu_6.0_en.sh &amp;&amp; bash install.sh aapanel</span></span><br></pre></td></tr></table></figure><h2 id="宝塔命令改账号密码"><a href="#宝塔命令改账号密码" class="headerlink" title="宝塔命令改账号密码"></a>宝塔命令改账号密码</h2><ul><li>终端输入：bt</li><li>然后发：14 </li><li>一般改账号是：6</li><li>然后密码是：5</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 分享交流 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 宝塔面板 </tag>
+            
+            <tag> aaPanel </tag>
+            
+            <tag> 国际版宝塔 </tag>
+            
+            <tag> 分享交流 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hexo博客，小白的一分钟搭建安装教程</title>
+      <link href="/2024/08/06/hexo/"/>
+      <url>/2024/08/06/hexo/</url>
+      
+        <content type="html"><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul><li>搭建Hexo博客首先要安装<mark class="hl-label default">Node.js</mark>  和<mark class="hl-label default">Git</mark> </li><li><mark class="hl-label default">Node.js</mark>  下载地址 nodejs.org   </li><li><mark class="hl-label default">Git</mark> 下载地址 git-scm.com</li><li>为了方便编辑，还可以安装个<mark class="hl-label default">Visual</mark>  Visual Studio Code</li></ul><hr><h2 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h2><ol><li>安装好后在桌面新建一个文件夹，名字随意。</li><li>在新建的文件夹内右击鼠标 选择打开：<code>Open Git Bash here</code></li><li>切换镜像源目的是为了更快高潮 输入命令： <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure></li><li>切换后继续输入以下命令 安装Hexo：  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure></li><li>hexo init 自定义博客名  例如： <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure></li><li>执行到这一步，会看到有个 <code>blog</code> 文件夹里面有我们需要的<code>Hexo</code>文件</li><li>注意看是不是在 <code>blog</code> 目录 如果不是输入命令 <code>cd blog</code> 到目录，最简单的就是关闭<code>git</code>然后手动进入<code>blog</code>文件夹在右击鼠标重新打开<code>Open git bash here</code></li><li>然后我们开始测试原始Hexo 是否能运行起来 输入命令： <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">生成静态文件：</span><br><span class="line">hexo g </span><br><span class="line"></span><br><span class="line">没有报错继续输入：</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure> 会输出给你个 <a href="http://localhost:4000/">http://localhost:4000</a> 复制到浏览器打开，能正常打开显示 Hexo 原始框架博客即为ojbk</li></ol><h2 id="本地部署完结"><a href="#本地部署完结" class="headerlink" title="本地部署完结"></a>本地部署完结</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 分享交流 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 分享交流 </tag>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Nodejs </tag>
+            
+            <tag> Git </tag>
+            
+        </tags>
       
     </entry>
     
