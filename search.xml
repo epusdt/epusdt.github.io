@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>TokenPay安装详细教程，小白宝塔安装TokenPay教程，安装USDT支付收款教程，发卡网USDT支付搭建教程</title>
+      <link href="/2024/08/11/tokenpay/"/>
+      <url>/2024/08/11/tokenpay/</url>
+      
+        <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><ul><li>搭建TokenPay支付系统跟配合易支付使用太过漫长，本篇只讲主要配置事项。</li><li>发出来就是分享参考，小白能看懂或看不懂勿问。不提供任何解答（本店老客户可力所能及的帮忙）</li><li>Epusdt跟TokenPay都是可以直接在独角发卡系统后台直接填网址秘钥就能对接</li><li>可以说这两款USDT收款系统是和独角原配~</li><li>其他发卡网系统没开发接口的都需要花钱找人开发，或者和本次教程提到的，接入易支付再用易支付对接发卡网，因为市面上的发卡网系统都可以接入易支付</li><li>简单来说就是走一下易支付中转实现任何发卡网都可以USDT收款功能</li></ul><h2 id="站点配证书开HTTPS"><a href="#站点配证书开HTTPS" class="headerlink" title="站点配证书开HTTPS"></a>站点配证书开HTTPS</h2><ul><li>添加站点，证书一定要配并且开启强制HTTPS，取消防跨站，这开头几步你搭建任何网站程序都基本一致必做的，这么简单不会就别往下看了。<br><img src="https://tc.izhan.cc/i/2024/08/11/m3g9hh.png" alt="Test"><br><img src="https://tc.izhan.cc/i/2024/08/11/m3gdlc.png" alt="Test"></li></ul><h2 id="上传源码改文件名"><a href="#上传源码改文件名" class="headerlink" title="上传源码改文件名"></a>上传源码改文件名</h2><ul><li><p>重命名appsettings.Example.json为appsettings.json<br><img src="https://tc.izhan.cc/i/2024/08/11/m3jbth.png" alt="Test"></p></li><li><p>双击打开appsetting.json文件编辑配置，appsetting.json配置内容，都标注了详细的配置方法，需要用到的申请地址也都有，自己看尾巴的注解！</p><figure class="highlight php"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;Serilog&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;MinimumLevel&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;Default&quot;</span>: <span class="string">&quot;Information&quot;</span>,</span><br><span class="line">      <span class="string">&quot;Override&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;Microsoft&quot;</span>: <span class="string">&quot;Warning&quot;</span>,</span><br><span class="line">        <span class="string">&quot;Microsoft.Hosting.Lifetime&quot;</span>: <span class="string">&quot;Information&quot;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;AllowedHosts&quot;</span>: <span class="string">&quot;*&quot;</span>,</span><br><span class="line">  <span class="string">&quot;ConnectionStrings&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;DB&quot;</span>: <span class="string">&quot;Data Source=|DataDirectory|TokenPay.db; Pooling=true;&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;TRON-PRO-API-KEY&quot;</span>: <span class="string">&quot;xxxxxx-xxxx-xxxx-xxxxxxxxxxxx&quot;</span>, <span class="comment">// 避免接口请求频繁被限制，此处申请 https://www.trongrid.io/dashboard/keys</span></span><br><span class="line">  <span class="string">&quot;BaseCurrency&quot;</span>: <span class="string">&quot;CNY&quot;</span>, <span class="comment">//默认货币，支持 CNY、USD、EUR、GBP、AUD、HKD、TWD、SGD</span></span><br><span class="line">  <span class="string">&quot;Rate&quot;</span>: &#123; <span class="comment">//汇率 设置0将使用自动汇率</span></span><br><span class="line">    <span class="string">&quot;USDT&quot;</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">&quot;TRX&quot;</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">&quot;ETH&quot;</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">&quot;USDC&quot;</span>: <span class="number">0</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;ExpireTime&quot;</span>: <span class="number">1800</span>, <span class="comment">//单位秒</span></span><br><span class="line">  <span class="string">&quot;UseDynamicAddress&quot;</span>: <span class="literal">false</span>, <span class="comment">//是否使用动态地址，设为false时，与EPUSDT表现类似；设为true时，为每个下单用户分配单独的收款地址</span></span><br><span class="line">  <span class="string">&quot;Address&quot;</span>: &#123; <span class="comment">// UseDynamicAddress设为false时在此配置TRON收款地址，EVM可以替代所有ETH系列的收款地址，支持单独配置某条链的收款地址</span></span><br><span class="line">    <span class="string">&quot;TRON&quot;</span>: [ <span class="string">&quot;TLUF41C386CMU1Wc8pTSCE4QaiZ2xkhTCb&quot;</span> ],</span><br><span class="line">    <span class="string">&quot;EVM&quot;</span>: [ <span class="string">&quot;0x9966aA2f1dDD7c1174553e687791a96c1Bc20680&quot;</span> ]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;OnlyConfirmed&quot;</span>: <span class="literal">false</span>, <span class="comment">//默认仅查询已确认的数据，如果想要回调更快，可以设置为false</span></span><br><span class="line">  <span class="string">&quot;NotifyTimeOut&quot;</span>: <span class="number">3</span>, <span class="comment">//异步通知超时时间</span></span><br><span class="line">  <span class="string">&quot;ApiToken&quot;</span>: <span class="string">&quot;666666&quot;</span>, <span class="comment">//异步通知密钥，请务必修改此密钥为随机字符串，脸滚键盘即可</span></span><br><span class="line">  <span class="string">&quot;WebSiteUrl&quot;</span>: <span class="string">&quot;http://token-pay.xxxxx.com&quot;</span>, <span class="comment">//配置服务器外网域名</span></span><br><span class="line">  <span class="string">&quot;Collection&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;Enable&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="string">&quot;UseEnergy&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">&quot;RetainUSDT&quot;</span>: <span class="literal">true</span>, <span class="comment">//归集USDT时是否保留0.000001，用于降低用户下次支付的成本</span></span><br><span class="line">    <span class="string">&quot;CheckTime&quot;</span>: <span class="number">1</span>, <span class="comment">//归集任务运行间隔，默认1小时运行一次，单位：小时</span></span><br><span class="line">    <span class="string">&quot;MinUSDT&quot;</span>: <span class="number">0.1</span>, <span class="comment">//只归集USDT余额大于此金额的地址</span></span><br><span class="line">    <span class="string">&quot;NeedEnergy&quot;</span>: <span class="number">31895</span>, <span class="comment">//归集USDT所需能量</span></span><br><span class="line">    <span class="string">&quot;EnergyPrice&quot;</span>: <span class="number">420</span>, <span class="comment">//波场当前能量单价</span></span><br><span class="line">    <span class="string">&quot;Address&quot;</span>: <span class="string">&quot;TLUF41C386CMU1Wc8pTSCE4QaiZ2xkhTCb&quot;</span> <span class="comment">//归集收款地址</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;Telegram&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;AdminUserId&quot;</span>: <span class="number">12345678</span>, <span class="comment">// 你的账号ID，如不知道ID，可给https://t.me/EShopFakaBot 发送 /me 获取用户ID</span></span><br><span class="line">    <span class="string">&quot;BotToken&quot;</span>: <span class="string">&quot;1234567890:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;</span> <span class="comment">//从https://t.me/BotFather 创建机器人时，会给你BotToken</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;RateMove&quot;</span>: &#123; <span class="comment">//汇率微调，支持设置正负数，仅支持两位小数</span></span><br><span class="line">    <span class="string">&quot;TRX_CNY&quot;</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">&quot;USDT_CNY&quot;</span>: <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><p><strong>重点需填的部分解读：</strong></p><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;TRON-PRO-API-KEY&quot;</span>: <span class="string">&quot;xxxxxx-xxxx-xxxx-xxxxxxxxxxxx&quot;</span>, <span class="comment">// 避免接口请求频繁被限制，此处申请 https://www.trongrid.io/dashboard/keys</span></span><br><span class="line"></span><br><span class="line">用于获取链上实时汇率以及监听你USDT地址是否收到和订单一致的金额</span><br></pre></td></tr></table></figure><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;TRON&quot;</span>: [ <span class="string">&quot;TLUF41C386CMU1Wc8pTSCE4QaiZ2xkhTCb&quot;</span> ],</span><br><span class="line"></span><br><span class="line">改里面的地址成你的</span><br></pre></td></tr></table></figure><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;ApiToken&quot;</span>: <span class="string">&quot;666666&quot;</span>, <span class="comment">//异步通知密钥，请务必修改此密钥为随机字符串，脸滚键盘即可</span></span><br><span class="line"></span><br><span class="line">这里<span class="number">666666</span>设置对接TokenPay秘钥，自定义可数字加字母组合，就跟易支付秘钥用途一样</span><br></pre></td></tr></table></figure><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;WebSiteUrl&quot;</span>: <span class="string">&quot;http://token-pay.xxxxx.com&quot;</span>, <span class="comment">//配置服务器外网域名</span></span><br><span class="line"></span><br><span class="line">改成你自己TokenPay网址</span><br></pre></td></tr></table></figure><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;Address&quot;</span>: <span class="string">&quot;TLUF41C386CMU1Wc8pTSCE4QaiZ2xkhTCb&quot;</span> <span class="comment">//归集收款地址</span></span><br><span class="line"></span><br><span class="line">改成自己地址</span><br></pre></td></tr></table></figure><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;AdminUserId&quot;</span>: <span class="number">12345678</span>, <span class="comment">// 你的账号ID，如不知道ID，可给https://t.me/EShopFakaBot 发送 /me 获取用户ID</span></span><br><span class="line"></span><br><span class="line">查看自己飞机号唯一ID，不是用户名！用于已支付USDT的订单会推送信息给你</span><br></pre></td></tr></table></figure><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;BotToken&quot;</span>: <span class="string">&quot;1234567890:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;</span> <span class="comment">//从https://t.me/BotFather 创建机器人时，会给你BotToken</span></span><br><span class="line"></span><br><span class="line">创建一个机器人，填写TG机器人秘钥，用于支付通知，和Epusdt不同，这里机器人只是会通知你已支付成功的订单信息</span><br></pre></td></tr></table></figure><h2 id="给TokenPay权限755"><a href="#给TokenPay权限755" class="headerlink" title="给TokenPay权限755"></a>给TokenPay权限755</h2><ul><li>给运行文件TokenPay权限755<br><img src="https://tc.izhan.cc/i/2024/08/11/m3jatj.png" alt="Test"></li></ul><h2 id="添加反向代理"><a href="#添加反向代理" class="headerlink" title="添加反向代理"></a>添加反向代理</h2><ul><li><p>TokenPay默认端口号为5000，按图添加<br><img src="https://tc.izhan.cc/i/2024/08/11/m3m311.png" alt="Test"></p></li><li><p>放行端口5000<br><img src="https://tc.izhan.cc/i/2024/08/11/m3m6ql.png" alt="Test"></p></li><li><p>添加进程守护<br><img src="https://tc.izhan.cc/i/2024/08/11/m45gue.png" alt="Test"><br><img src="https://tc.izhan.cc/i/2024/08/11/m45j7s.png" alt="Test"></p></li></ul><h2 id="成功实例"><a href="#成功实例" class="headerlink" title="成功实例"></a>成功实例</h2><p><img src="https://tc.izhan.cc/i/2024/08/11/m45js0.png" alt="Test"><br><img src="https://tc.izhan.cc/i/2024/08/11/m45q1t.png" alt="Test"> </p><hr><h2 id="易支付搭配TokenPay"><a href="#易支付搭配TokenPay" class="headerlink" title="易支付搭配TokenPay"></a>易支付搭配TokenPay</h2><ul><li>自行获取易支付源码，不要随便搜索网上的下载，很多都有后门，下载到电脑可能都报毒了，自行找靠谱的源码或者买官方的300元授权正版易支付</li><li>我这里自己搭建好易支付了，也插入TokenPay插件了，现在直接教易支付后台配置TokenPay实现USDT收款<br><img src="https://tc.izhan.cc/i/2024/08/11/ne2r5g.png" alt="Test"><br><img src="https://tc.izhan.cc/i/2024/08/11/ngc02t.png" alt="Test"><br><img src="https://tc.izhan.cc/i/2024/08/11/ngc9es.png" alt="Test"></li></ul><h2 id="添加自己收款商户"><a href="#添加自己收款商户" class="headerlink" title="添加自己收款商户"></a>添加自己收款商户</h2><ul><li>设置一个用于我们自己对接的商户<br><img src="https://tc.izhan.cc/i/2024/08/11/ngc64j.png" alt="Test"><br><img src="https://tc.izhan.cc/i/2024/08/11/ngc8kp.png" alt="Test"><br><img src="https://tc.izhan.cc/i/2024/08/11/ngcehz.png" alt="Test"></li></ul><h2 id="设置支付方式和通道"><a href="#设置支付方式和通道" class="headerlink" title="设置支付方式和通道"></a>设置支付方式和通道</h2><ul><li><p>只开启TRX和USDT支付方式即可<br><img src="https://tc.izhan.cc/i/2024/08/11/ngcfwz.png" alt="Test"></p></li><li><p>添加我们的TokenPay支付通道<br><img src="https://tc.izhan.cc/i/2024/08/11/ngck0c.png" alt="Test"></p></li><li><p>配置通道接口<br><img src="https://tc.izhan.cc/i/2024/08/11/ngcmqb.png" alt="Test"></p></li></ul><h2 id="去发卡网后台配置"><a href="#去发卡网后台配置" class="headerlink" title="去发卡网后台配置"></a>去发卡网后台配置</h2><ul><li>例如我去自己演示站后台配置易支付</li><li>市面上的发卡网基本都有易支付配置填写</li><li>我们可以选择支付宝或者微信或者基本用不着的QQ易支付来配置即可<br><img src="https://tc.izhan.cc/i/2024/08/11/ngcn5q.png" alt="Test"></li></ul><p><strong>配置好易支付去发卡网首页下单，购买页选择下单支付的时候就会跳转到我们搭建的易支付平台，因为我们易支付只配置了USDT通道，所以不管客户在发卡网选择支付宝还是微信还是QQ支付，都会跳转到此页面，让其自动选择USDT支付即可</strong><br><img src="https://tc.izhan.cc/i/2024/08/11/ngcx8s.png" alt="Test"> </p><h2 id="拉起支付页面"><a href="#拉起支付页面" class="headerlink" title="拉起支付页面"></a>拉起支付页面</h2><p><img src="https://tc.izhan.cc/i/2024/08/11/ngd55y.png" alt="Test"> </p><ul><li>客户按支付页面显示的订单金额转账到我们的地址后，自动回调发货。</li><li>这样TokenPay默认的金额都是小数点四位数，我们可以设置成两位数（不懂的别乱设置，在TokenPay的配置文件appsetting.json里面，小数点用于辨别同时来的相同金额，等一个订单如果是1.01u，第二个自动增加0.01u就是1.02u以此类堆，直到前面的支付成功或者订单过期，又从头开始小数点，每个小数点都只锁定一个订单金额，安全可靠）</li><li>这个默认的支付页面有点一言难尽……本站前面也有介绍美化版支付页面</li></ul><h2 id="易支付后台订单状态"><a href="#易支付后台订单状态" class="headerlink" title="易支付后台订单状态"></a>易支付后台订单状态</h2><p><img src="https://tc.izhan.cc/i/2024/08/11/ngd9gw.png" alt="Test"> </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网站搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 分享交流 </tag>
+            
+            <tag> 网站搭建 </tag>
+            
+            <tag> USDT支付 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>宝塔搭建Epusdt详细教程，搭建USDT支付收款教程，详细的USDT支付搭建教程，Epusdt详细的搭建教程（图文）</title>
       <link href="/2024/08/10/epusdt/"/>
       <url>/2024/08/10/epusdt/</url>
@@ -49,13 +78,13 @@
       
         <tags>
             
-            <tag> 网站搭建 </tag>
-            
-            <tag> 分享交流 </tag>
-            
             <tag> 宝塔面板 </tag>
             
             <tag> 国际版宝塔 </tag>
+            
+            <tag> 分享交流 </tag>
+            
+            <tag> 网站搭建 </tag>
             
         </tags>
       
@@ -80,9 +109,9 @@
       
         <tags>
             
-            <tag> 网站搭建 </tag>
-            
             <tag> 分享交流 </tag>
+            
+            <tag> 网站搭建 </tag>
             
         </tags>
       
@@ -134,13 +163,13 @@
       
         <tags>
             
-            <tag> 网站搭建 </tag>
-            
-            <tag> 分享交流 </tag>
-            
             <tag> 宝塔面板 </tag>
             
             <tag> 国际版宝塔 </tag>
+            
+            <tag> 分享交流 </tag>
+            
+            <tag> 网站搭建 </tag>
             
         </tags>
       
@@ -192,13 +221,13 @@
       
         <tags>
             
-            <tag> 分享交流 </tag>
-            
             <tag> 宝塔面板 </tag>
+            
+            <tag> aaPanel </tag>
             
             <tag> 国际版宝塔 </tag>
             
-            <tag> aaPanel </tag>
+            <tag> 分享交流 </tag>
             
         </tags>
       
