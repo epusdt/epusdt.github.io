@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>独角数卡用户版，带用户中心版，优化图标对齐排列，基于原用户版源码仿了一下彩虹商品列表排列，对齐用户中心，修复列表模板不能搜索商品问题</title>
+      <link href="/2024/08/12/dujiaoka1/"/>
+      <url>/2024/08/12/dujiaoka1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="发现很多号商喜欢手机端商品大图列表"><a href="#发现很多号商喜欢手机端商品大图列表" class="headerlink" title="发现很多号商喜欢手机端商品大图列表"></a>发现很多号商喜欢手机端商品大图列表</h2><ul><li><p>原用户中心一小部分需要优化，搜索功能，大小缩放，分类部分，用户中心排列发布。</p></li><li><p>但也都是些小问题，一两个代码就能修好。</p></li><li><p>照着仿了一下彩虹的手机端商品排列</p></li><li><p>不管是用户中心版还是没有用户中心的，直接覆盖都能改。</p></li><li><p>可设置调整 固定商品框大小 固定商品图片大小 商品名字大小长短颜色 在css部分直接调整即可</p></li><li><p>手机端：商品分类标题在上，商品大图左侧，适应商品长名字，价格库存标签在名字下面显示。</p></li><li><p>电脑端：和手机端一致，只不过是保留右侧购买摁钮。</p></li><li><p>总体来说把多余可有可无的东西删改了一些，然后重新排列一下，看起来更加简单明了。</p></li></ul><p><img src="https://tc.izhan.cc/i/2024/08/08/dujvd7.jpeg"><br><img src="https://tc.izhan.cc/i/2024/08/12/lruyaw.png"> </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网站搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 分享交流 </tag>
+            
+            <tag> 网站搭建 </tag>
+            
+            <tag> USDT支付 </tag>
+            
+            <tag> 独角数卡 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>TokenPay安装详细教程，小白宝塔安装TokenPay教程，安装USDT支付收款教程，发卡网USDT支付搭建教程</title>
       <link href="/2024/08/11/tokenpay/"/>
       <url>/2024/08/11/tokenpay/</url>
